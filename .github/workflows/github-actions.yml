@@ -47,7 +47,7 @@ jobs:
       - name: Deploy usando action do Render
         uses: johnbeynon/render-deploy-action@v0.0.3
         with:
-          serviceId: srv-d4h3kd2dbo4c73b87ck0
+          serviceId: srv-d4iuopur433s73aaghmg
           apiKey: ${{ secrets.KEYDEVOPS }}
           clearCache: false
 
