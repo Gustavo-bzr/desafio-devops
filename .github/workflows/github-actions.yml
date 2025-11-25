@@ -53,5 +53,5 @@ jobs:
 
       - name: Deploy Hook no Render
         run: |
-          curl -X POST "${{  }}"
+          curl -X POST "${{ secrets.HOOK_GUSTAVO }}"
           echo "Deploy enviado ao Render."
