@@ -3,7 +3,7 @@ from flask_swagger_ui import get_swaggerui_blueprint
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required
 
 app = Flask(__name__)
-
+#
 # Configuração do JWT
 app.config['JWT_SECRET_KEY'] = 'your_secret_key'
 jwt = JWTManager(app)
@@ -22,12 +22,12 @@ def home():
 def get_items():
     return jsonify(items=["item1", "item2", "item3"])
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET'])
 def login():
     access_token = create_access_token(identity="user")
     return jsonify(access_token=access_token)
 
-@app.route('/protected', methods=['GET'])
+@app.route('/protected', methods=['POST'])
 @jwt_required()
 def protected():
     return jsonify(message="Protected route")
